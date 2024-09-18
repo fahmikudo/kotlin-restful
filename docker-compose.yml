@@ -1,0 +1,19 @@
+services:
+  kotlin-restful-api:
+    container_name: "kotlin-restful-api"
+    image: kotlin-restful-api:0.0.1
+    ports:
+      - 8080:8080
+    environment:
+      DATABASE_USERNAME: kotlin
+      DATABASE_PASSWORD: kotlin
+      DATABASE_URL: jdbc:postgresql://db-postgres:5432/kotlin_restful
+  kotlin-restful-api-postgres:
+    container_name: "db-postgres"
+    image: postgres:12-alpine
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: kotlin
+      POSTGRES_PASSWORD: kotlin
+      POSTGRES_DATABASE: kotlin_restful

@@ -1,0 +1,68 @@
+### Create Positive Case
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "P0002",
+  "name": "Mac Book Air 2020",
+  "price": 12000000,
+  "quantity": 10
+}
+
+### Create Negative Case
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "",
+  "name": "",
+  "price": 0,
+  "quantity": -10
+}
+
+### Get Positive Case
+GET http://localhost:8080/api/products/P0001
+Content-Type: application/json
+
+### Get Negative Case
+GET http://localhost:8080/api/products/P0002
+Content-Type: application/json
+
+### Edit Positive Case
+PUT http://localhost:8080/api/products/P0001
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Mac Book Pro 14",
+  "price": 35000000,
+  "quantity": 12
+}
+
+### Edit Negative Case
+PUT http://localhost:8080/api/products/P0002
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Mac Book Pro 14",
+  "price": 35000000,
+  "quantity": 12
+}
+
+### Delete Positive Case
+DELETE http://localhost:8080/api/products/P0001
+Accept: application/json
+
+### Delete Negative Case
+DELETE http://localhost:8080/api/products/P0001
+Accept: application/json
+
+### List Products
+GET http://localhost:8080/api/products?page=1&size=5
+Accept: application/json
+
+
+
